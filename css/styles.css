@@ -49,3 +49,9 @@ body {
     font-size: 1.2rem;
     padding: 1rem 0;
 }
+
+.cards__container {
+    display: flex;
+/*    flex-direction: row;
+    align-items: center;*/
+}
