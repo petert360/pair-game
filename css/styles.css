@@ -23,6 +23,7 @@ body {
     align-items: center;
     justify-content: center;
     position: fixed;
+    flex-direction: column;
     top: 0;
     left: 0;
     right: 0;
@@ -54,4 +55,11 @@ body {
     display: flex;
 /*    flex-direction: row;
     align-items: center;*/
+}
+
+.card__element{
+    width: 2rem;
+    height: 3rem;
+    margin: 5px;
+    box-shadow: 1px 1px 1px rgba(0,0,0,.3);
 }
