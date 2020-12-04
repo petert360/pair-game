@@ -68,7 +68,7 @@ body {
     /*background: rgb(255, 255, 255);*/
     /*background-color: transparent;*/
     margin: 1rem;
-    perspective: 600px;
+    perspective: 1000px;
 }
 
 .card__element__inner {
@@ -80,7 +80,11 @@ body {
     transform-style: preserve-3d;
 }
 
-.card__element:hover .card__element__inner {
+/*.card__element:hover .card__element__inner {
+    transform: rotateY(180deg);
+}*/
+
+.card__element--flipped {
     transform: rotateY(180deg);
 }
 

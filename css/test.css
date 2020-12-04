@@ -1,0 +1,41 @@
+/* alapbeállítások */
+
+html {
+    font-size: 16px;
+    color: rgb(255, 255, 255);
+}
+
+body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* alapbeállítások vége */
+
+.main--style {
+    display: flex;
+    background: hsl(191, 63%, 70%);
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    flex-direction: column;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.card__element {
+    height: 10rem;
+    width: 7rem;
+    border: 1px solid;
+}
+
+.blueBorder{
+    border: 1px solid blue;
+}
