@@ -27,6 +27,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
+    perspective: 500px;
 }
 
 .flippedCard {
@@ -38,7 +39,6 @@ body {
     height: 10rem;
     width: 7rem;
     margin: .8rem;
-    perspective: 500px;
     transition: transform .5s ease-in-out;
     transform-origin: center;
     transform-style: preserve-3d;
