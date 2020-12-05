@@ -2,14 +2,43 @@
 // https://w3bits.com/css-flip-animation/
 
 
-let isCardFlipped = false;
 
+let isCardFlipped = false;
+let firstCard, secondCard;
+
+function checkForMatch(card1, card2) {
+    if (card1.dataset.cardset === card2.dataset.cardset) {
+        disableCards();
+        return;
+    }
+    unflipCards();
+}
+
+function disableCards() {
+    firstCard.removeEventListener('click', flipCard);
+    secondCard.removeEventListener('click', flipCard);
+  }
+
+function unflipCards() {
+    setTimeout(() => {
+        firstCard.classList.remove('flippedCard');
+        secondCard.classList.remove('flippedCard');
+    }, 1000);
+}
 
 let cardElements = document.querySelectorAll('.card');
 
 Array.from(cardElements).forEach((card) => {
     card.addEventListener('click', () => {
         card.classList.add('flippedCard');
+        if (!isCardFlipped) {
+            isCardFlipped = true;
+            firstCard = card;
+            return
+        }
+        secondCard = card;
+        isCardFlipped = false;
+        checkForMatch(firstCard, secondCard);
     })
 })
 
