@@ -44,7 +44,6 @@ body {
     transform-style: preserve-3d;
 }
 
-
 .card__front, .card__back {
     position: absolute;
     /*top: 0;
