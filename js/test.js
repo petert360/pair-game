@@ -1,16 +1,8 @@
-/*let cardElements = document.querySelectorAll('.card__element');
-for (let i = 0; i < cardElements.length; i += 1) {
-    cardElements[i].addEventListener('click', function (event) {
-        cardElements.classList.add('.blueBorder');
+//https://w3bits.com/css-flip-animation/
+
+let cardElements = document.querySelectorAll('.card__inner');
+Array.from(cardElements).forEach((card) => {
+    card.addEventListener('click', () => {
+        card.classList.toggle('flipCard');
     })
-    
-}*/
-
-function changeBorder(event) {
-    //cardElement.className = 'card__element blueBorder';
-    cardElement.classList.toggle('blueBorder')
-}
-
-let cardElement = document.querySelector('.card__element');
-cardElement.addEventListener('click', changeBorder)
-
+})  

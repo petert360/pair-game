@@ -107,3 +107,7 @@ body {
     color: white;
     transform: rotateY(180deg);
 }
+
+.card__back{
+    transform: rotateY(180deg);
+}
