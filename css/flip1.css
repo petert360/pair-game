@@ -33,22 +33,17 @@ body {
     transform: rotateY(180deg);
 }
 
-.card, .card__inner {
+.card {
     position: relative;
     height: 10rem;
     width: 7rem;
-}
-
-.card {
     margin: .8rem;
     perspective: 500px;
-}
-
-.card__inner {
     transition: transform .5s ease-in-out;
     transform-origin: center;
     transform-style: preserve-3d;
 }
+
 
 .card__front, .card__back {
     position: absolute;

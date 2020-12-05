@@ -29,6 +29,40 @@ body {
     bottom: 0;
 }
 
+.card {
+	height: 10rem;
+	width: 8rem;
+	margin: 0.2rem 0.2rem;
+	background: #141214;
+	font-size: 0;
+	color: #ffffff;
+	border-radius: 5px;
+	cursor: pointer;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.card-open {
+    animation-name: flipInY;
+    animation-duration: 1s;
+    background: #02b3e4;
+    
+	cursor: default;
+    backface-visibility: visible;
+    }
+
+@keyframes flipInY {
+	from {
+        transform: perspective(400px) rotateY(0deg);
+    }
+    
+	to {
+        transform: perspective(400px) rotateY(180deg);
+	}
+}
+
+/*
 .flippedCard {
     transform: rotateY(180deg);
 }
@@ -52,8 +86,6 @@ body {
 
 .card__front, .card__back {
     position: absolute;
-    /*top: 0;
-    left: 0;*/
     width: 100%;
     height: 100%;
     display: flex;
@@ -66,4 +98,4 @@ body {
 
 .card__front {
     transform: rotateY(180deg);
-}
+}*/
