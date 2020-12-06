@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/flip1.css">
+    <link rel="stylesheet" href="./css/font-awesome-4.7.0/css/font-awesome.min.css">
     <title>Pairs game</title>
 </head>
 
@@ -13,79 +14,106 @@
         <section class="text__container">
             <div class="text__h1">JAVASCRIPT PAIRS GAME</div>
             <div class="text__h2">CLICK ANY CARD TO BEGIN</div>
-            <div class="clock__text">00:00</div>
+            <div class="stopWatch__element">00:00</div>
         </section>
 
-        <section class="cards__container">
-            <div class="container__row">
-                <div class="card__element">
-                    <div class="card__element__inner">
-                        <div class="card__element__front">
-                            front
-                        </div>
-                        <div class="card__element__back">
-                            back
-                        </div>
+        <div class="cards__container">
+            <div class="card__element">
+                <div class="card__inner" data-cardset="first">
+                    <div class="card__front">
+                        <i class="fa fa-search"></i>
                     </div>
+                    <div class="card__back"></div>
                 </div>
-
-                <div class="card__element">
-                    <div class="card__element__inner">
-                        <div class="card__element__front">
-                            front
-                        </div>
-                        <div class="card__element__back">
-                            back
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card__element">
-                    <div class="card__element__inner">
-                        <div class="card__element__front">
-                            front
-                        </div>
-                        <div class="card__element__back">
-                            back
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card__element">
-                    <div class="card__element__inner">
-                        <div class="card__element__front">
-                            front
-                        </div>
-                        <div class="card__element__back">
-                            back
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card__element">
-                    <div class="card__element__inner">
-                        <div class="card__element__front">
-                            front
-                        </div>
-                        <div class="card__element__back">
-                            back
-                        </div>
-                    </div>
-                </div>
-
             </div>
-            <div class="container__row">
-                
-                <div class="card__element"></div>
-                <div class="card__element"></div>
-                <div class="card__element"></div>
-                <div class="card__element"></div>
-                <div class="card__element"></div>
+            
+            <div class="card__element">
+                <div class="card__inner" data-cardset="first">
+                    <div class="card__front">
+                        <i class="fa fa-search"></i>
+                    </div>
+                    <div class="card__back"></div>
+                </div>
             </div>
-        </section>
+            
+            <div class="card__element">
+                <div class="card__inner" data-cardset="second">
+                    <div class="card__front">
+                        <i class="fa fa-camera-retro"></i>
+                    </div>
+                    <div class="card__back"></div>
+                </div>
+            </div>
+            
+            <div class="card__element">
+                <div class="card__inner" data-cardset="second">
+                    <div class="card__front">
+                        <i class="fa fa-camera-retro"></i>
+                    </div>
+                    <div class="card__back"></div>
+                </div>
+            </div>
+            
+            <div class="card__element">
+                <div class="card__inner" data-cardset="third">
+                    <div class="card__front">
+                        <i class="fa fa-globe"></i>
+                    </div>
+                    
+                    <div class="card__back"></div>
+                </div>
+            </div>
+            
+            <div class="card__element">
+                <div class="card__inner" data-cardset="third">
+                    <div class="card__front">
+                        <i class="fa fa-globe"></i>
+                    </div>
+                    <div class="card__back"></div>
+                </div>
+            </div>
+            
+            <div class="card__element">
+                <div class="card__inner" data-cardset="fourth">
+                    <div class="card__front">
+                        <i class="fa fa-star"></i>
+                    </div>
+                    <div class="card__back"></div>
+                </div>
+            </div>
+            
+            <div class="card__element">
+                <div class="card__inner" data-cardset="fourth">
+                    <div class="card__front">
+                        <i class="fa fa-star"></i>
+                    </div>
+                    <div class="card__back"></div>
+                </div>
+            </div>
+
+            <div class="card__element">
+                <div class="card__inner" data-cardset="fifth">
+                    <div class="card__front">
+                        <i class="fa fa-plane"></i>
+                    </div>
+                    <div class="card__back"></div>
+                </div>
+            </div>
+
+            <div class="card__element">
+                <div class="card__inner" data-cardset="fifth">
+                    <div class="card__front">
+                        <i class="fa fa-plane"></i>
+                    </div>
+                    <div class="card__back"></div>
+                </div>
+            </div>
+
+        </div>
+
     </main>
 
-    <script src="./js/script.js"></script>
+    <script src="./js/flip1.js"></script>
 </body>
 
 </html>
