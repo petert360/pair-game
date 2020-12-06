@@ -96,7 +96,6 @@ let cardsToShuffle = document.querySelectorAll('.card__element');
     });
 })();
 
-
 // időmérő
 // https://tinloof.com/blog/how-to-build-a-stopwatch-with-html-css-js-react-part-2/
 
@@ -126,10 +125,7 @@ function startStopWatch() {
     startTime = Date.now();
     timerInterval = setInterval(function printTime() {
         elapsedTime = Date.now() - startTime;
-        document.querySelector('.timer').innerHTML = timeToString(elapsedTime);
+        document.querySelector('.stopWatch__element').innerHTML = timeToString(elapsedTime);
     }, 1000)
     stopWatchIsRunning = true;
 }
-
-
-
