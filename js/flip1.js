@@ -6,13 +6,13 @@ let firstCard, secondCard;
 let lockCards = false;  // a második kártya fordításakor válik igazzá, és megakadályozza, hogy újabb kártyát fordítsunk
 
 function checkForMatch(card1, card2) {
-/*  if (card1.dataset.cardset === card2.dataset.cardset) {
-          disableCards();
-          return;
-      }
-      unflipCards();
-Ugyanez három operandusos kifejezéssel: 
-*/
+    /*  if (card1.dataset.cardset === card2.dataset.cardset) {
+              disableCards();
+              return;
+          }
+          unflipCards();
+    Ugyanez három operandusos kifejezéssel: 
+    */
     let isMatch = card1.dataset.cardset === card2.dataset.cardset;
     isMatch ? disableCards() : unflipCards();
 }
@@ -20,7 +20,7 @@ Ugyanez három operandusos kifejezéssel:
 function disableCards() {
     firstCard.removeEventListener('click', flipCard);
     secondCard.removeEventListener('click', flipCard);
-    
+
     resetCards();
 }
 
@@ -38,6 +38,7 @@ function unflipCards() {
 function flipCard() {
     if (lockCards) return;
     if (this === firstCard) return;
+    startTimer();
 
     this.classList.add('flippedCard');
     if (!isCardFlipped) {
@@ -53,9 +54,10 @@ function flipCard() {
 function resetCards() {
     [isCardFlipped, lockCards] = [false, false];
     [firstCard, secondCard] = [null, null];
-  }
+}
 
-let cardElements = document.querySelectorAll('.card');
+
+let cardElements = document.querySelectorAll('.card__inner');
 Array.from(cardElements).forEach((card) => {
     card.addEventListener('click', flipCard)
 })
@@ -79,9 +81,33 @@ function shuffleFisherYates(array) {
 //When display: flex is declared on the container, flex-items are arranged by the following hierarchy: group and source order. Each group is defined by the order property, which holds a positive or negative integer. By default, each flex-item has its order property set to 0, which means they all belong to the same group and will be laid out by source order. If there is more than one group, elements are firstly arranged by ascending group order.
 //There is 10 cards in the game, so we will iterate through them, generate a random number between 0 and 9 and assign it to the flex-item order property:
 
+let cardsToShuffle = document.querySelectorAll('.card__element');
+
 (function shuffleByFlexOrder() {
-    cardElements.forEach(card => {
+    cardsToShuffle.forEach(card => {
         let ramdomPos = Math.floor(Math.random() * 10);
         card.style.order = ramdomPos;
     });
 })();
+
+
+// játék időmérő
+// https://scotch.io/tutorials/how-to-build-a-memory-matching-game-in-javascript
+
+let second = 0, minute = 0;
+let timer = document.querySelector(".timer");
+let interval;
+function startTimer(){
+    interval = setInterval(function(){
+        timer.innerHTML = minute+"mins "+second+"secs";
+        second++;
+        if(second == 60){
+            minute++;
+            second = 0;
+        }
+        if(minute == 60){
+            hour++;
+            minute = 0;
+        }
+    },1000);
+}

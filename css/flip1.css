@@ -28,31 +28,36 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    perspective: 1000px;
 }
 
-.cards__container{
+.cards__container {
     align-items: center;
     justify-content: center;
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
-    width: 60%
+    width: 45rem;
 }
 
-.flippedCard {
-    transform: rotateY(180deg);
+.card__element {
+    perspective: 500px;
 }
 
-.card {
+.card__element, .card__inner {
     position: relative;
     height: 10rem;
     width: 7rem;
     padding: .5rem;
-    margin: 1rem 0;
+    margin: 1rem 1rem;
+}
+
+.card__inner {
     transition: transform .5s ease-in-out;
     transform-origin: 50% 50%;
     transform-style: preserve-3d;
+}
+
+.flippedCard {
+    transform: rotateY(180deg);
 }
 
 .card__front, .card__back {
