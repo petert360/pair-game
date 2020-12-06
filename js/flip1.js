@@ -1,45 +1,63 @@
 // Animáció leírása:
 // https://w3bits.com/css-flip-animation/
 
-
-
 let isCardFlipped = false;
 let firstCard, secondCard;
+let lockCards = false;  // a második kártya fordításakor válik igazzá, és megakadályozza, hogy újabb kártyát fordítsunk
 
 function checkForMatch(card1, card2) {
-    if (card1.dataset.cardset === card2.dataset.cardset) {
-        disableCards();
-        return;
-    }
-    unflipCards();
+/*  if (card1.dataset.cardset === card2.dataset.cardset) {
+          disableCards();
+          return;
+      }
+      unflipCards();
+Ugyanez három operandusos kifejezéssel: 
+*/
+    let isMatch = card1.dataset.cardset === card2.dataset.cardset;
+    isMatch ? disableCards() : unflipCards();
 }
 
 function disableCards() {
     firstCard.removeEventListener('click', flipCard);
     secondCard.removeEventListener('click', flipCard);
-  }
+    
+    resetCards();
+}
 
 function unflipCards() {
+    lockCards = true;
+
     setTimeout(() => {
         firstCard.classList.remove('flippedCard');
         secondCard.classList.remove('flippedCard');
+        // lockCards = false;
+        resetCards();
     }, 1000);
 }
 
-let cardElements = document.querySelectorAll('.card');
+function flipCard() {
+    if (lockCards) return;
+    if (this === firstCard) return;
 
+    this.classList.add('flippedCard');
+    if (!isCardFlipped) {
+        isCardFlipped = true;
+        firstCard = this;
+        return
+    }
+    secondCard = this;
+    // isCardFlipped = false;
+    checkForMatch(firstCard, secondCard);
+}
+
+function resetCards() {
+    [isCardFlipped, lockCards] = [false, false];
+    [firstCard, secondCard] = [null, null];
+  }
+
+let cardElements = document.querySelectorAll('.card');
 Array.from(cardElements).forEach((card) => {
-    card.addEventListener('click', () => {
-        card.classList.add('flippedCard');
-        if (!isCardFlipped) {
-            isCardFlipped = true;
-            firstCard = card;
-            return
-        }
-        secondCard = card;
-        isCardFlipped = false;
-        checkForMatch(firstCard, secondCard);
-    })
+    card.addEventListener('click', flipCard)
 })
 
 //Fisher-Yates Shuffle algorithm
