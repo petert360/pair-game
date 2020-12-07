@@ -24,6 +24,7 @@ function disableCards() {
     pairsFound += 1;
     if (pairsFound === 5) {
         clearInterval(timerInterval);
+        setTimeout("location.reload(true);", 5000);
     }
     resetCards();
 }
